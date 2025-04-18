@@ -1,0 +1,70 @@
+/***********************************
+        DESKTOP STYLES
+***********************************/
+.portfolio {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+    padding: calc(80px + var(--space-m)) var(--space-m);
+    overflow: hidden;
+}
+
+.portfolio .text {
+    display: flex;
+    width: 100%;
+    margin-bottom:120px;
+}
+
+.portfolio header {
+    display: flex;
+    width: 100%;
+    font-size: var(--step-0);
+    padding: var(--space-2xs) 0;
+    margin-bottom: var(--space-m);
+    border-bottom: 1px solid var(--text-color);
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.portfolio .text p {
+    font-size: var(--step-3);
+    letter-spacing: -2px;
+}
+
+.portfolio .text .fade {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.portfolio .slider-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.portfolio .slider {
+    display: flex;
+    width: fit-content;
+    column-gap: var(--space-m);
+    animation: fadeIn 1.5s ease forwards;
+    padding: 0 50vw;
+}
+
+.portfolio .slider .panel {
+    width: 400px;
+    max-width: 10%;
+    height: 600px;
+    background-color: bisque;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

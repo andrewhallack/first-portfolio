@@ -1,11 +1,48 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+:root {
+  font-family: 'Nunito', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* --bg-color: #f8f8f8;
+  --bg-dark: #efefef;
+  --text-color: #222326;
+  --primary-color: #58B1C3;
+  --accent: #d97a40; */
+
+  --bg-color: #121212;
+  --text-color: #D7DADC;
+
+  --step--2: clamp(0.5556rem, 0.7143rem + -0.0992vw, 0.6944rem);
+  --step--1: clamp(0.8333rem, 0.8333rem + 0vw, 0.8333rem);
+  --step-0: clamp(1rem, 0.9643rem + 0.1786vw, 1.25rem);
+  --step-1: clamp(1.2rem, 1.1036rem + 0.4821vw, 1.875rem);
+  --step-2: clamp(1.44rem, 1.2439rem + 0.9804vw, 2.8125rem);
+  --step-3: clamp(1.728rem, 1.3722rem + 1.7791vw, 4.2188rem);
+  --step-4: clamp(2.0736rem, 1.4658rem + 3.0389vw, 6.3281rem);
+  --step-5: clamp(2.4883rem, 1.4878rem + 5.0028vw, 9.4922rem);
+  --step-6: clamp(2.986rem, 1.3785rem + 8.0374vw, 14.2383rem);
+
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,2560,20,1.5,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|4,s-l&g=s,l,xl,12 */
+
+  --space-3xs: clamp(0.25rem, 0.2411rem + 0.0446vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4821rem + 0.0893vw, 0.625rem);
+  --space-xs: clamp(0.75rem, 0.7232rem + 0.1339vw, 0.9375rem);
+  --space-s: clamp(1rem, 0.9643rem + 0.1786vw, 1.25rem);
+  --space-m: clamp(1.5rem, 1.4464rem + 0.2679vw, 1.875rem);
+  --space-l: clamp(2rem, 1.9286rem + 0.3571vw, 2.5rem);
+  --space-xl: clamp(3rem, 2.8929rem + 0.5357vw, 3.75rem);
+  --space-2xl: clamp(4rem, 3.8571rem + 0.7143vw, 5rem);
+  --space-3xl: clamp(4rem, 3.8571rem + 0.7143vw, 5rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1964rem + 0.2679vw, 0.625rem);
+  --space-2xs-xs: clamp(0.5rem, 0.4375rem + 0.3125vw, 0.9375rem);
+  --space-xs-s: clamp(0.75rem, 0.6786rem + 0.3571vw, 1.25rem);
+  --space-s-m: clamp(1rem, 0.875rem + 0.625vw, 1.875rem);
+  --space-m-l: clamp(1.5rem, 1.3571rem + 0.7143vw, 2.5rem);
+  --space-l-xl: clamp(2rem, 1.75rem + 1.25vw, 3.75rem);
+  --space-xl-2xl: clamp(3rem, 2.7143rem + 1.4286vw, 5rem);
+  --space-2xl-3xl: clamp(4rem, 3.8571rem + 0.7143vw, 5rem);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +50,94 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  color: var(--text-color);
 }
 
+p {
+  font-size: var(--step-0);
+}
+h6 {
+  font-size: var(--step-1);
+}
+h5 {
+  font-size: var(--step-2);
+  letter-spacing: -1px;
+}
+h4 {
+  font-size: var(--step-3);
+  letter-spacing: -2px;
+}
+h3 {
+  font-size: var(--step-4);
+  letter-spacing: -1px;
+}
+h2 {
+  font-size: var(--step-5);
+  letter-spacing: -5px;
+}
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--step-6);
+  letter-spacing: -3px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  padding: 8px 20px;
+  border: transparent;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-family: 'Nunito Sans';
+  font-size: var(--step-0);
+  border-radius: 50px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.button.filled {
+  background-color: var(--accent);
+  color: var(--text-color);
+}
+
+.button.empty {
+  border: 1px solid #22232644;
+  background-color: transparent;
+}
+
+mark {
+  position: relative;
+  background-color: transparent;
+}
+mark:after {
+  border: .25em solid var(--accent);
+  border-top: none;
+  border-radius: 1.5em 1em 2em 1.5em;
+  bottom: -.3em;
+  content: '';
+  left: -.3em;
+  position: absolute;
+  right: -.3em;
+  top: -.1em;
+}
+mark:before {
+  border-top: .25em solid var(--accent);
+  border-radius: .5em;
+  content: '';
+  height: 1em;
+  left: 0;
+  position: absolute;
+  top: -.3em;
+  transform: rotate(-10deg);
+  width: 3em;
+}
+
+a {
+  text-decoration: none;
 }
